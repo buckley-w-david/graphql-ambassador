@@ -1,0 +1,22 @@
+# virtualenv
+.Python
+.python-version
+bin
+include
+lib
+
+# Linting
+.mypy_cache/
+.pytest_cache
+
+# Misc Python artifacts
+__pycache__/
+*.py[cod]
+*.egg-info
+pip-log.txt
+pip-delete-this-directory.txt
+pip-selfcheck.json
+
+.coverage
+
+instance
