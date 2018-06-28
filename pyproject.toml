@@ -8,6 +8,7 @@ authors = ["David Buckley <buckley.w.david@gmail.com>"]
 python = "^3.6"
 graphene = "^2.1"
 flask = "^1.0"
+requests = "^2.19"
 
 [tool.poetry.dev-dependencies]
 pytest = "^3.0"
