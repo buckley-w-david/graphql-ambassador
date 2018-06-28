@@ -24,6 +24,7 @@ CONFIGMAP = {
 
 def create_app(environment: Environment) -> Flask:
     app = Flask(__name__, instance_relative_config=True)
+    app.config.from_object(CONFIGMAP[environment])
     app.config.from_pyfile('application.cfg', silent=True)
     app.register_blueprint(proxy)
 

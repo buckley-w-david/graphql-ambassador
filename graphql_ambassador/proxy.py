@@ -1,5 +1,6 @@
 from flask import Blueprint
 from flask import request, Response
+from flask import current_app as app
 import requests
 
 proxy = Blueprint('proxy', __name__)
@@ -23,6 +24,6 @@ def _proxy(host, path):
 @proxy.route('/', defaults={'path': ''})
 @proxy.route('/<path:path>')
 def ambassador(path):
-    resp, headers = _proxy('https://swapi.co/api/', path)
+    resp, headers = _proxy(app.config.get('PROXY_SITE'), path)
     response = Response(resp.content, resp.status_code, headers)
     return response
